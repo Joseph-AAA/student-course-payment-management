@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+/* ================================
+   Global Variables
+================================ */
+
+:root {
+  --font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+
+  --color-primary: #3b82f6;
+  --color-navy: #172554;
+
+  --color-background: #f8fafc;
+  --color-surface: #ffffff;
+  --color-border: #e2e8f0;
+
+  --color-text: #0f172a;
+  --color-text-muted: #64748b;
+}
+
+/* ================================
+   Dark Theme
+================================ */
+
+.dark {
+  --color-background: #0b1120;
+  --color-surface: #111827;
+  --color-border: #1e293b;
+
+  --color-text: #f8fafc;
+  --color-text-muted: #94a3b8;
+
+  --color-navy: #0f172a;
+  --color-primary: #60a5fa;
+}
+
+/* ================================
+   Base
+================================ */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+
+  font-family: var(--font-sans);
+  background-color: var(--color-background);
+  color: var(--color-text);
+
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+/* ================================
+   Links
+================================ */
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ================================
+   Buttons & Inputs
+================================ */
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+/* ================================
+   Selection
+================================ */
+
+::selection {
+  background-color: var(--color-primary);
+  color: white;
+}
