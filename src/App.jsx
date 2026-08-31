@@ -1,6 +1,9 @@
+
 function App(){
-  return <div className="text-red-500">
-            Hello React Project
-        </div>
+  return  <div className="">
+            <h1 className="text-4xl font-bold text-blue-400">
+              Student Course Management
+            </h1>
+    </div>
 }
 export default App;
