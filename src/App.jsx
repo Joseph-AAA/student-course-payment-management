@@ -17,15 +17,16 @@ function App(){
                   </nav>
                   
 
+
                   <main className="w-full bg-white flex justify-center items-center">
                       <div className="text-4xl font-bold text-blue-400">
-                        Student Course Management
+                        Student Course Management Dashboard
                       </div>              
                   </main>
                   
 
                   <div className=" bg-green-600  w-full">
-                    <Footer  />                
+                    <Footer />                
                   </div>
               </div>
            
