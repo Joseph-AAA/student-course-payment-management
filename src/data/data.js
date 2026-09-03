@@ -2,7 +2,7 @@ import {
   Home,
   BookOpen,
   Users,
-  CreditCard,
+  CreditCard, 
   Settings,
   Info,
 } from "lucide-react";
