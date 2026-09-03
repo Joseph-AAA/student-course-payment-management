@@ -6,7 +6,7 @@ import Footer from "./components/layout/Footer";
 function App(){
   return  <div className="grid min-h-screen grid-cols-[240px_1fr]">
 
-              <aside  className="bg-blue-400 h-full w-full text-white">
+              <aside  className="bg-blue-400 h-full w-full text-white grid justify-center">
                 <Sidebar />
               </aside>
 
