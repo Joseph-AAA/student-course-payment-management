@@ -6,19 +6,19 @@ import Footer from "./components/layout/Footer";
 function App(){
   return  <div className="grid min-h-screen grid-cols-[240px_1fr]">
 
-              <aside  className="bg-blue-400 h-full w-full text-white grid justify-center">
-                <Sidebar />
+              <aside  className="bg-(--sidebar) h-full w-full  text-white flex flex-col items-center">
+                <Sidebar  />
               </aside>
 
-              <div className= "grid grid-rows-[76px_1fr_56px] gap-4 bg-black h-full w-full">
+              <div className= "grid grid-rows-[76px_1fr_56px] gap-0 bg-(--background) h-full w-full">
 
-                 <nav className="w-full bg-amber-300">
-                     <Navbar />
+                  <nav className="w-full bg-(--navbar) shadow-md">
+                      <Navbar />
                   </nav>
-                  
+                        
 
 
-                  <main className="w-full bg-white flex justify-center items-center">
+                  <main className="w-full  flex justify-center items-center">
                       <div className="text-4xl font-bold text-blue-400">
                         Student Course Management Dashboard
                       </div>              
