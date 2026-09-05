@@ -5,8 +5,7 @@
 ================================ */
 * {
   box-sizing: border-box;
-  margin: 0;
-
+ 
 }
 
 html,
@@ -25,7 +24,7 @@ html {
   --navbar: #ffffff;
   --background: #f5f8ff;
   --surface: #ffffff;
-
+  --footer: #363e97;
   --text-primary: #0f172a;
   --text-secondary: #475569;
 
@@ -130,9 +129,9 @@ body {
     );
 }
 .container {
-  width: 98%;
+  width: 95%;
   margin-inline: auto;
-  padding-inline: 1rem;
+  /* padding-inline: 1rem; */
 }
 
 /* ================================
@@ -148,14 +147,14 @@ a {
    Buttons & Inputs
 ================================ */
 
-h1,
-h2,
-h3,
-h4 {
+h1{
   /* font-weight: 800; */
   letter-spacing: -0.02em;
   line-height: 1.15;
+  color:#21295e;
+  font-size: 1.85rem;
 }
+
 
 /* ================================
    Selection

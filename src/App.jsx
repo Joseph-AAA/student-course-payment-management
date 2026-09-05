@@ -2,6 +2,15 @@ import Navbar from "./components/layout/Navbar";
 import Sidebar from "./components/layout/Sidebar";
 import Footer from "./components/layout/Footer";
 
+import Dashboard from "./pages/Dashboard";
+import Courses from "./pages/Courses";
+import Students from "./pages/Students";
+import Payments from "./pages/Payments";
+import Setting from "./pages/Setting";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import {Route,Routes} from "react-router-dom";  
+
 
 function App(){
   return  <div className="grid min-h-screen grid-cols-[240px_1fr]">
@@ -19,13 +28,22 @@ function App(){
 
 
                   <main className="w-full  flex justify-center items-center">
-                      <div className="text-4xl font-bold text-blue-400">
-                        Student Course Management Dashboard
-                      </div>              
+                      <Routes>
+                          <Route path="/about" element= {<About />} />
+                          <Route path="/contact" element= {<Contact />} />
+                          <Route path="/courses" element= {<Courses />} />
+                          <Route path="/payments" element= {<Payments />} />
+                          <Route path="/setting" element= {<Setting />} />
+                          <Route path="/" element={<Dashboard />} />
+                          <Route path="/students" element= {<Students />} />
+                         
+                        
+                          
+                      </Routes>
                   </main>
                   
 
-                  <div className=" bg-green-600  w-full">
+                  <div className=" bg-(--footer)  w-full">
                     <Footer />                
                   </div>
               </div>
