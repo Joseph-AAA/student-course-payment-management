@@ -29,8 +29,8 @@ export const sidebarLinks = [
     icon: CreditCard,
   },
   {
-    label: "Settings",
-    path: "/settings",
+    label: "Setting",
+    path: "/setting",
     icon: Settings,
   },
   {
