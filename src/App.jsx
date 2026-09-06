@@ -1,9 +1,12 @@
+import { Routes, Route } from "react-router-dom";
+import Students from "./pages/Students";
 
-function App(){
-  return  <div className="">
-            <h1 className="text-4xl font-bold text-blue-400">
-              Student Course Management
-            </h1>
-    </div>
+function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<Students />} />
+    </Routes>
+  );
 }
+
 export default App;
