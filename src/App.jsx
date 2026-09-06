@@ -2,7 +2,7 @@ import Navbar from "./components/layout/Navbar";
 import Sidebar from "./components/layout/Sidebar";
 import Footer from "./components/layout/Footer";
 
-import Dashboard from "./pages/Dashboard";
+import MainDashboard from "./pages/MainDashboard";
 import Courses from "./pages/Courses";
 import Students from "./pages/Students";
 import Payments from "./pages/Payments";
@@ -34,7 +34,7 @@ function App(){
                           <Route path="/courses" element= {<Courses />} />
                           <Route path="/payments" element= {<Payments />} />
                           <Route path="/setting" element= {<Setting />} />
-                          <Route path="/" element={<Dashboard />} />
+                          <Route path="/" element={<MainDashboard />} />
                           <Route path="/students" element= {<Students />} />
                          
                         

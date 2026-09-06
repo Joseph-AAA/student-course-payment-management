@@ -1,4 +1,5 @@
 import {Bell, ChevronDown } from "lucide-react";
+
 function Navbar() {
   return <>
               <form className="flex justify-between items-center gap-4 container 
@@ -6,7 +7,7 @@ function Navbar() {
                     <input
                     placeholder = "Search Students..."
                         className="h-9 w-[45%] rounded-md border border-gray-300 text-sm 
-                                    focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-e-blue-300 px-[8px] "
+                                    focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-e-blue-300 px-2"
                     />
 
                     <div className="flex items-center gap-4 h-full">
