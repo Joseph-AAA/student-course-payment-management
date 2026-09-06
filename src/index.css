@@ -131,6 +131,8 @@ body {
 .container {
   width: 95%;
   margin-inline: auto;
+  height: 95%;
+  min-height: 100%;
   /* padding-inline: 1rem; */
 }
 

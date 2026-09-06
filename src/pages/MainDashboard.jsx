@@ -1,11 +1,18 @@
 import {CalendarDays} from 'lucide-react';
+import DashboardComponent from '../components/dashboard/DashboardComponent';
+
 function Dashboard (){
 
     const day = new Date().toLocaleDateString('en-GB', { weekday: 'long', month: 'short', day: '2-digit', year: 'numeric' });
     console.log(day);
 
+    // const totalStudents = students.length;
+    // const totalCourses = courses.length;
+    // const totalRevenue = payments.reduce((total, payment) => total + payment.amountPaid, 0);
+    // const pendingPayments = payments.reduce((total, payment) => total + payment.balance, 0);
+
     
-    return  <div className="container  h-[95%] grid grid-cols-[2fr_1fr] border-2 border-(--border) rounded-xl ">
+    return  <div className="container pt-3 grid grid-cols-[1fr_1fr] lg:grid-cols-[2fr_1fr] border-2 border-(--border) rounded-xl ">
                     <section>
 
 {/*****************************************************header**********************************************/}
@@ -26,7 +33,7 @@ function Dashboard (){
                         </header>
 
 {/****************************************************Total View Card***********************************************/}
-
+                        <DashboardComponent />
 
                     </section>
                     <section>

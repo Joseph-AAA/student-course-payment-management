@@ -5,6 +5,8 @@ import {
   CreditCard, 
   Settings,
   Info,
+  BarChart3,
+   WalletCards
 } from "lucide-react";
 
 export const sidebarLinks = [
@@ -211,10 +213,6 @@ export const students = [
 ];
 
 
-
-
-
-
 export const payments = [
   {
     id: "PAY-001",
@@ -275,5 +273,42 @@ export const payments = [
     balance: 1600,
     status: "Pending",
     paymentDate: null,
+  },
+];
+
+
+
+export const dashboardCards = [
+  {
+    icon: Users,
+    value: students.length,
+    label: "Total Students",
+    bgColor : "bg-[#2563EB]",
+    change: "↑ 12%",
+    text : "from last month"
+  },
+  {
+    icon: BookOpen,
+    value: courses.length,
+    label: "Total Courses",
+    bgColor :"bg-[#16A34A]",
+    change: "↑ 8%",
+    text : "from last month"
+  },
+  {
+    icon: BarChart3,
+    value: `RM ${payments.reduce((total, payment) => total + payment.amountPaid, 0).toLocaleString()}`,
+    label: "Total Revenue",
+     bgColor : "bg-[#7C3AED]",
+     change: "↑ 15%",
+     text : "from last month"
+  },
+  {
+    icon: WalletCards,
+    value: `RM ${payments.reduce((total, payment) => total + payment.balance, 0).toLocaleString()}`,
+    label: "Pending Payments",
+    bgColor : "bg-[#EA580C]",
+    change: "↓ 5%",
+    text : "from last month"
   },
 ];
