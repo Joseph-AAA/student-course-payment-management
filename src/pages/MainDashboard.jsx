@@ -1,5 +1,7 @@
 import {CalendarDays} from 'lucide-react';
 import DashboardComponent from '../components/dashboard/DashboardComponent';
+// import ActivityComponent from '../components/dashboard/ActivityComponent';
+import ActivityCard from '../components/dashboard/ActivityCard';
 
 function Dashboard (){
 
@@ -34,7 +36,9 @@ function Dashboard (){
 
 {/****************************************************Total View Card***********************************************/}
                         <DashboardComponent />
+                        
 
+                        <ActivityCard />
                     </section>
                     <section>
 

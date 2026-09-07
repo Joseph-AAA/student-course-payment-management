@@ -6,7 +6,7 @@ import {
   Settings,
   Info,
   BarChart3,
-   WalletCards
+   WalletCards, UserPlus,Mail,UserRound,
 } from "lucide-react";
 
 export const sidebarLinks = [
@@ -312,3 +312,77 @@ export const dashboardCards = [
     text : "from last month"
   },
 ];
+
+
+export const activity = [
+  {
+    id: 1,
+    type: "student",
+    name: "Sarah Lee",
+    time: "2 minutes ago",
+  },
+  {
+    id: 2,
+    type: "payment",
+    name: "John Tan",
+    amount: 1500,
+    time: "5 minutes ago",
+  },
+  {
+    id: 3,
+    type: "course",
+    name: "React.js for Beginners",
+    time: "1 hour ago",
+  },
+  {
+    id: 4,
+    type: "paymentReminder",
+    count: 5,
+    time: "2 hours ago",
+  },
+  {
+    id: 5,
+    type: "profileUpdate",
+    name: "Daniel Lim",
+    time: "3 hours ago",
+  },
+]
+
+
+
+export const activityConfig = {
+  student: {
+    icon: UserPlus,
+    bgColor :"bg-[#16A34A]/30",
+    message: (activity) =>
+      `New student ${activity.name} has been registered`,
+  },
+
+  payment: {
+    icon: CreditCard,
+    bgColor :"bg-[#16A34A]/30",
+    message: (activity) =>
+      `Payment received from ${activity.name}`,
+  },
+
+  course: {
+    icon: BookOpen,
+    bgColor : "bg-[#7C3AED]/30",
+    message: (activity) =>
+      `New course ${activity.name} has been added`,
+  },
+
+  paymentReminder: {
+    icon: Mail,
+    bgColor : "bg-[#EA580C]/30",
+    message: (activity) =>
+      `Payment reminder sent to ${activity.count} students`,
+  },
+
+  profileUpdate: {
+    icon: UserRound,
+    bgColor : "bg-[#2563EB]/30",
+    message: (activity) =>
+      `Student ${activity.name} updated his profile`,
+  },
+};
