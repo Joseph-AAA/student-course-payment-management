@@ -2,6 +2,7 @@ import {CalendarDays} from 'lucide-react';
 import DashboardComponent from '../components/dashboard/DashboardComponent';
 // import ActivityComponent from '../components/dashboard/ActivityComponent';
 import ActivityCard from '../components/dashboard/ActivityCard';
+import RevenueOverviewChart from '../components/dashboard/RevenueOverviewChart';
 
 function Dashboard (){
 
@@ -37,8 +38,11 @@ function Dashboard (){
 {/****************************************************Total View Card***********************************************/}
                         <DashboardComponent />
                         
-
-                        <ActivityCard />
+                        <div className='flex gap-5'>
+                            <ActivityCard />
+                        <RevenueOverviewChart />
+                        </div>
+                        
                     </section>
                     <section>
 
