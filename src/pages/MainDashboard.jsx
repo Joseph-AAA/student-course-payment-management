@@ -38,10 +38,10 @@ function Dashboard (){
 {/****************************************************Total View Card***********************************************/}
                         <DashboardComponent />
                         
-                        <div className='flex gap-5'>
+                       <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
                             <ActivityCard />
-                        <RevenueOverviewChart />
-                        </div>
+                            <RevenueOverviewChart />
+                    </div>
                         
                     </section>
                     <section>
