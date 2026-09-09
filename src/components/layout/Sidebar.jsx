@@ -3,7 +3,7 @@ import {sidebarLinks} from "../../data/data.js";
 import { GraduationCap } from "lucide-react";
 import { NavLink,Link } from "react-router-dom";
 function Sidebar() {
-  return <div className="flex flex-col w-[89%] min-h-80 gap-1">
+  return <div className="flex flex-col w-[89%] min-h-80  gap-1">
 
                       <Link to="/" className="flex items-center gap-2 h-20 justify-center ">
                           <GraduationCap className="size-16 " />
