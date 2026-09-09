@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import { students as studentData } from "../data/students";
+
 import StudentForm from "../components/students/StudentForm";
 import StudentTable from "../components/students/StudentTable";
 import StudentDetails from "./StudentDetails";
@@ -12,8 +13,6 @@ function Students() {
   const [showForm, setShowForm] = useState(false);
   const [editingStudent, setEditingStudent] = useState(null);
   const [viewingStudent, setViewingStudent] = useState(null);
-
-  // Course names used for displaying the Course ID nicely
   const courseNames = {
     1: "Web Development",
     2: "Data Science",
@@ -22,31 +21,32 @@ function Students() {
     5: "Python",
     6: "React",
   };
-
-  // Add student
   const handleAddStudent = (newStudent) => {
-    setStudents((currentStudents) => [
-      ...currentStudents,
-      {
-        ...newStudent,
-        status: "Active",
-      },
-    ]);
-  };
+    setStudents((currentStudents) => {
+      const nextId =
+        currentStudents.length > 0
+          ? Math.max(
+              ...currentStudents.map((student) => Number(student.id))
+            ) + 1
+          : 1;
 
-  // View student
+      const studentToAdd = {
+        ...newStudent,
+        id: nextId,
+        status: "Active",
+      };
+
+      return [...currentStudents, studentToAdd];
+    });
+  };
   const handleViewStudent = (student) => {
     setViewingStudent(student);
   };
-
-  // Edit student
   const handleEditStudent = (student) => {
     setEditingStudent(student);
     setShowForm(true);
     setViewingStudent(null);
   };
-
-  // Update student
   const handleUpdateStudent = (updatedStudent) => {
     setStudents((currentStudents) =>
       currentStudents.map((student) =>
@@ -58,53 +58,43 @@ function Students() {
           : student
       )
     );
-
     setViewingStudent(updatedStudent);
     setEditingStudent(null);
+    setShowForm(false);
   };
-
-  // Delete student
   const handleDeleteStudent = (id) => {
     const confirmDelete = window.confirm(
       "Are you sure you want to delete this student?"
     );
-
-    if (!confirmDelete) return;
-
+    if (!confirmDelete) {
+      return;
+    }
     setStudents((currentStudents) =>
       currentStudents.filter((student) => student.id !== id)
     );
-
     if (viewingStudent?.id === id) {
       setViewingStudent(null);
     }
-
     if (editingStudent?.id === id) {
       setEditingStudent(null);
       setShowForm(false);
     }
   };
-
-  // Close form
   const handleCloseForm = () => {
     setShowForm(false);
     setEditingStudent(null);
   };
-
-  // Get course name
   const getCourseName = (courseId) => {
     return courseNames[courseId] || `Course ${courseId}`;
   };
-
-  // Courses available in filter
   const courseOptions = [
     "All Courses",
     ...Array.from(
-      new Set(students.map((student) => getCourseName(student.courseId)))
+      new Set(
+        students.map((student) => getCourseName(student.courseId))
+      )
     ),
   ];
-
-  // Filter students
   const filteredStudents = useMemo(() => {
     return students.filter((student) => {
       const searchText = search.toLowerCase();
@@ -128,22 +118,19 @@ function Students() {
     });
   }, [students, search, courseFilter, statusFilter]);
 
-  // Statistics
   const totalStudents = students.length;
-
   const activeCourses = new Set(
     students.map((student) => student.courseId)
   ).size;
-
   const pendingPayments = students.filter(
     (student) =>
       student.paymentStatus === "Pending" ||
       student.paymentStatus === "Partial"
   ).length;
-
-  // For the current mock data
   const newThisMonth = students.filter((student) => {
-    if (!student.enrollmentDate) return false;
+    if (!student.enrollmentDate) {
+      return false;
+    }
 
     const enrollmentDate = new Date(student.enrollmentDate);
     const now = new Date();
@@ -153,14 +140,12 @@ function Students() {
       enrollmentDate.getFullYear() === now.getFullYear()
     );
   }).length;
-
   return (
     <div className="min-h-screen bg-slate-50 p-4 md:p-6">
 
-      {/* ================= HEADER ================= */}
-      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between mb-6">
+      <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <h1 className="text-2xl md:text-3xl font-bold text-slate-900">
+          <h1 className="text-2xl font-bold text-slate-900 md:text-3xl">
             Students
           </h1>
 
@@ -181,11 +166,7 @@ function Students() {
           Add Student
         </button>
       </div>
-
-      {/* ================= STATISTICS ================= */}
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4 mb-6">
-
-        {/* Total Students */}
+      <div className="mb-6 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
         <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
           <div className="flex items-center gap-4">
             <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 text-2xl">
@@ -203,8 +184,6 @@ function Students() {
             </div>
           </div>
         </div>
-
-        {/* Active Courses */}
         <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
           <div className="flex items-center gap-4">
             <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-50 text-2xl">
@@ -222,8 +201,6 @@ function Students() {
             </div>
           </div>
         </div>
-
-        {/* New This Month */}
         <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
           <div className="flex items-center gap-4">
             <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-purple-50 text-2xl">
@@ -241,8 +218,6 @@ function Students() {
             </div>
           </div>
         </div>
-
-        {/* Pending Payments */}
         <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
           <div className="flex items-center gap-4">
             <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-amber-50 text-2xl">
@@ -262,8 +237,6 @@ function Students() {
         </div>
 
       </div>
-
-      {/* ================= ADD / EDIT FORM ================= */}
       {showForm && (
         <StudentForm
           onAddStudent={handleAddStudent}
@@ -272,18 +245,14 @@ function Students() {
           editingStudent={editingStudent}
         />
       )}
-
-      {/* ================= MAIN CONTENT ================= */}
       <div
         className={`grid grid-cols-1 gap-6 ${
-          viewingStudent ? "xl:grid-cols-[minmax(0,1fr)_360px]" : ""
+          viewingStudent
+            ? "xl:grid-cols-[minmax(0,1fr)_360px]"
+            : ""
         }`}
       >
-
-        {/* ================= LEFT SIDE ================= */}
         <div className="min-w-0">
-
-          {/* Search & Filters */}
           <div className="mb-5 rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
 
             <div className="grid grid-cols-1 gap-3 md:grid-cols-4">
@@ -302,38 +271,34 @@ function Students() {
                   className="w-full rounded-lg border border-slate-200 bg-white py-2.5 pl-10 pr-4 text-sm outline-none transition placeholder:text-slate-400 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100"
                 />
               </div>
-
-              {/* Course */}
               <select
                 value={courseFilter}
                 onChange={(e) => setCourseFilter(e.target.value)}
                 className="rounded-lg border border-slate-200 bg-white px-3 py-2.5 text-sm text-slate-600 outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100"
               >
                 {courseOptions.map((course) => (
-                  <option key={course}>{course}</option>
+                  <option key={course} value={course}>
+                    {course}
+                  </option>
                 ))}
               </select>
-
-              {/* Status */}
               <select
                 value={statusFilter}
                 onChange={(e) => setStatusFilter(e.target.value)}
                 className="rounded-lg border border-slate-200 bg-white px-3 py-2.5 text-sm text-slate-600 outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100"
               >
-                <option>All Status</option>
-                <option>Active</option>
-                <option>Inactive</option>
-                <option>Pending</option>
+                <option value="All Status">All Status</option>
+                <option value="Active">Active</option>
+                <option value="Inactive">Inactive</option>
+                <option value="Pending">Pending</option>
               </select>
-
             </div>
 
-            {/* Filter info */}
             <div className="mt-3 flex items-center justify-between text-xs text-slate-400">
               <span>
-                Showing {filteredStudents.length} of {students.length} students
+                Showing {filteredStudents.length} of{" "}
+                {students.length} students
               </span>
-
               {(search ||
                 courseFilter !== "All Courses" ||
                 statusFilter !== "All Status") && (
@@ -348,11 +313,9 @@ function Students() {
                   Clear filters
                 </button>
               )}
+
             </div>
-
           </div>
-
-          {/* Student Table */}
           <StudentTable
             students={filteredStudents}
             onView={handleViewStudent}
@@ -362,8 +325,6 @@ function Students() {
           />
 
         </div>
-
-        {/* ================= RIGHT SIDE DETAILS ================= */}
         {viewingStudent && (
           <div className="xl:sticky xl:top-6 xl:self-start">
             <StudentDetails
