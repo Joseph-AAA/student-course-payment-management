@@ -131,11 +131,11 @@ export default function Courses() {
   };
 
   return (
-    <div className="flex gap-6 p-6">
+    <div className="container flex gap-6 ">
       {/* Main Content */}
       <div className="flex-1 min-w-0">
         {/* Header */}
-        <div className="flex justify-between items-center mb-6">
+        <div className="flex justify-between items-center pt-5  mb-6">
           <div>
             <h2 className="text-2xl font-bold text-gray-800">Courses</h2>
             <p className="text-sm text-gray-500 mt-1">Manage and organize all courses</p>
@@ -241,7 +241,7 @@ export default function Courses() {
             ))}
           </div>
         ) : (
-          <div className="space-y-2">
+          <div className="space-y-2 ">
             {filteredCourses.map((course) => (
               <div key={course.id} onClick={() => openCourseModal(course)} className="bg-white border border-(--border) rounded-xl p-4 flex items-center gap-4 hover:shadow-md transition-all cursor-pointer">
                 <div className={`${course.color} h-12 w-12 flex items-center justify-center rounded-lg shrink-0`}>
@@ -278,7 +278,7 @@ export default function Courses() {
       </div>
 
       {/* Right Sidebar - exactly like screenshot */}
-      <div className="w-72 shrink-0">
+      <div className="w-72 shrink-0 pt-5 pb-5">
         <div className="bg-white border border-(--border) rounded-xl p-4">
           <div className="flex justify-between items-center mb-4">
             <h3 className="font-semibold text-gray-800">Filters</h3>
