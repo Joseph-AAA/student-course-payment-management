@@ -17,10 +17,10 @@ function RevenueOverviewChart(){
    
 
     return(
-        <div className="w-full flex flex-col items-center rounded-xl mt-5 mb-5 min-h-20
+        <div className="w-full flex flex-col items-center rounded-xl xl:mt-5 mb-5 h-96
                          bg-white shadow-sm">
 
-          <div className="w-full flex h-15 items-cente px-5 py-5 justify-between">
+          <div className="w-full flex  items-cente px-5 py-5 justify-between">
                     
                     <div>
                         <h3 className="font-bold">Revenue Overview</h3>
@@ -48,7 +48,7 @@ function RevenueOverviewChart(){
                <h1>{totalRevenue}  </h1>   
                 <p className="px-1 font-medium">Totoal Revenue</p>
             </div>  
-        <ResponsiveContainer width="100%" height={300} >
+        <ResponsiveContainer width="100%" height={240} >
             <AreaChart  data={chartData}>
                 <XAxis dataKey="month" />
                 <YAxis />

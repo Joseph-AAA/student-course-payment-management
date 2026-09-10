@@ -20,7 +20,7 @@ function Dashboard (){
 
 {/*****************************************************header**********************************************/}
 
-                        <header className ="flex justify-between items-center">
+                        <header className ="flex flex-wrap lg:flex-nowrap gap-5 items-center ">
                             <span className="flex flex-col gap-2">
                                 <h1 className=" font-bold text-blue-400">
                                     Welcome back, Admin! 👋
@@ -38,7 +38,7 @@ function Dashboard (){
 {/****************************************************Total View Card***********************************************/}
                         <DashboardComponent />
                         
-                       <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
+                       <div className="grid grid-cols-1 xl:grid-cols-2 gap-3">
                             <ActivityCard />
                             <RevenueOverviewChart />
                     </div>
