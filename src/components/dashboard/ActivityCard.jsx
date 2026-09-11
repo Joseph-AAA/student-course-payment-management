@@ -7,7 +7,7 @@ function ActivityCard(){
     console.log(activities)
 
     return(
-        <div className="w-full flex flex-col items-center rounded-xl mt-5 mb-5 bg-white shadow-sm">
+        <div className="w-full flex flex-col items-center  rounded-xl mt-5 mb-5 bg-white shadow-sm">
             <div className="w-[95%] h-16  flex items-center justify-between">
                 <h3 className="font-bold flex gap-3 text-blue-600">
                     <Activity/>
@@ -25,8 +25,8 @@ function ActivityCard(){
                     const Icon = config.icon;
 
                 return <div key={activity.id} className=" w-[95%] 
-                                             h-14 items-center flex   border-b border-gray-200 
-                                             last:border-b-0 gap-4 mb-2">
+                                             h-15 items-center  flex  border-b border-gray-200 
+                                             last:border-b-0 gap-4 ">
                             
                             <span className={`w-12 h-12 ${config.bgColor}  rounded-full flex
                                             justify-center items-center`}>

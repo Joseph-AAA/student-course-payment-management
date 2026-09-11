@@ -16,13 +16,13 @@ function App() {
   return (
     <div className="grid min-h-screen grid-cols-[240px_1fr]">
 
-      <aside className="bg-(--sidebar) h-full w-full text-white flex flex-col items-center">
+      <aside className="sticky top-0 h-screen bg-(--sidebar)  w-full text-white flex flex-col items-center">
         <Sidebar />
       </aside>
 
       <div className="grid grid-rows-[76px_1fr_56px] gap-0 bg-(--background) h-full w-full">
 
-        <nav className="w-full bg-(--navbar) shadow-md">
+        <nav className="sticky top-0 z-50 w-full bg-(--navbar) shadow-md">
           <Navbar />
         </nav>
 
