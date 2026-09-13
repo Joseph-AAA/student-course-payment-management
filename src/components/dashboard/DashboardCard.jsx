@@ -2,7 +2,7 @@
 function DashboardCard({ label, value, icon, Icon, change,bgColor,text}) {
   return (
         <div className="flex h-26  w-full  rounded-xl bg-white shadow-sm">
-            <div className={`flex w-16 pt-5 justify-center rounded-xl ${bgColor}`}>
+            <div className={`flex w-[25%] pt-5 justify-center rounded-xl ${bgColor}`}>
               <Icon className="size-7 text-white" />
             </div>
 
