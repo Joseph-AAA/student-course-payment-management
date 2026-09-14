@@ -14,9 +14,10 @@ import { Route, Routes } from "react-router-dom";
 
 function App() {
   return (
-    <div className="grid min-h-screen grid-cols-[240px_1fr]">
+    <div className=" grid min-h-screen grid-cols-1 lg:grid-cols-[240px_1fr]">
 
-      <aside className="sticky top-0 h-screen bg-(--sidebar)  w-full text-white flex flex-col items-center">
+      <aside className="sticky top-0 hidden h-screen w-full flex-col items-center 
+      bg-(--sidebar) text-white lg:flex">
         <Sidebar />
       </aside>
 

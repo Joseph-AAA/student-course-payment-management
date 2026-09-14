@@ -15,12 +15,12 @@ function Dashboard (){
     // const pendingPayments = payments.reduce((total, payment) => total + payment.balance, 0);
 
     
-    return  <div className="container pt-3 grid grid-cols-[1fr_1fr] lg:grid-cols-[2fr_1fr] border-2 border-(--border) rounded-xl ">
+    return  <div className="page-container pt-5 grid grid-cols-[1fr_1fr] lg:grid-cols-[2fr_1fr]  border-(--border) rounded-xl ">
                     <section>
 
 {/*****************************************************header**********************************************/}
 
-                        <header className ="flex flex-wrap lg:flex-nowrap gap-5 items-center ">
+                        <header className ="flex flex-wrap xl:flex-nowrap gap-5 items-center ">
                             <span className="flex flex-col gap-2">
                                 <h1 className=" font-bold text-blue-400">
                                     Welcome back, Admin! 👋
@@ -41,7 +41,7 @@ function Dashboard (){
                        <div className="grid grid-cols-1 xl:grid-cols-2 gap-3">
                             <ActivityCard />
                             <RevenueOverviewChart />
-                    </div>
+                      </div>
                         
                     </section>
                     <section>
