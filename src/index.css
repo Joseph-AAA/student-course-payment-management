@@ -128,12 +128,13 @@ body {
       transparent 60%
     );
 }
-.container {
+.page-container {
   width: 95%;
   margin-inline: auto;
   height: 95%;
   min-height: 100%;
   /* padding-inline: 1rem; */
+  /* border: #020617 1px solid; */
 }
 
 /* ================================
