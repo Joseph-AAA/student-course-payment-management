@@ -15,7 +15,7 @@ function Dashboard (){
     // const pendingPayments = payments.reduce((total, payment) => total + payment.balance, 0);
 
     
-    return  <div className="page-container pt-5 grid grid-cols-[1fr_1fr] lg:grid-cols-[2fr_1fr]  border-(--border) rounded-xl ">
+    return  <div className="page-container pt-5 grid grid-cols-1  md:grid-cols-[1fr_1fr] lg:grid-cols-[2fr_1fr]  border-(--border) rounded-xl ">
                     <section>
 
 {/*****************************************************header**********************************************/}
