@@ -2,15 +2,15 @@
 function DashboardCard({ label, value, icon, Icon, change,bgColor,text}) {
   return (
         <div className="flex h-26  w-full  rounded-xl bg-white shadow-sm">
-            <div className={`flex w-15  md:w-[25%] pt-5 justify-center rounded-xl ${bgColor}`}>
+            <div className={`flex w-15 shrink-0  pt-5 justify-center rounded-xl ${bgColor}`}>
               <Icon className="size-7 text-white" />
             </div>
 
             <div className="flex items-center gap-5 md:items-start md:gap-0 md:flex-col justify-center px-4">
-                <h2 className="text-xl md:text-xl font-bold">{value}</h2>
-                <p className="text-md text-gray-500">{label}</p>
+                <h2 className="text-md md:text-xl font-bold">{value}</h2>
+                <p className="text-sm text-gray-500">{label}</p>
 
-                <p className="text-md md:text-xs">
+                <p className="text-sm md:text-xs">
                   <span className="text-green-800">{change}</span> {text}
                 </p>
             </div>
