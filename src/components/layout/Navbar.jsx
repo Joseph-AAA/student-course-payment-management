@@ -1,18 +1,23 @@
-import {Bell, ChevronDown } from "lucide-react";
+import {Bell, ChevronDown,Menu } from "lucide-react";
+import { useState } from "react";
 
 function Navbar() {
+    const [sidebarOpen, setSidebarOpen] = useState(false);
   return <>
               <form className="page-container flex justify-between items-center gap-4 w-[95%]
                                h-full  ">
-                    <input
+                    {/* <input
                     placeholder = "Search Students..."
                         className="h-9 w-[45%] rounded-md border border-gray-300 text-sm 
                                     focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-e-blue-300 px-2"
-                    />
+                    /> */}
 
-                    <div className="flex items-center gap-4 h-full">
+                     <div>
+                         <Menu />
+                    </div>   
+                    <div className="w-50  flex items-center gap-4 h-full">
                         <Bell className="size-5 text-gray-500 cursor-pointer" />
-                        <div className="flex h-full items-center justify-end px-6">
+                        <div className="flex h-full items-center justify-end">
                                 <div className="flex items-center gap-3 cursor-pointer">
 
                                     {/* Profile Image */}
@@ -30,7 +35,7 @@ function Navbar() {
                                     {/* Down Arrow */}
                                     <ChevronDown className="size-5 text-gray-500" />
                                 </div>
-                            </div>
+                        </div>
                     </div>
               
               </form>  

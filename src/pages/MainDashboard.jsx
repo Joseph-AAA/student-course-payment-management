@@ -22,7 +22,7 @@ function Dashboard (){
 
                         <header className ="flex flex-wrap xl:flex-nowrap gap-5 items-center ">
                             <span className="flex flex-col gap-2">
-                                <h1 className=" font-bold text-blue-400">
+                                <h1 className=" font-bold text-xl sm:text-2xl lg:text-4xl text-[#21295e]">
                                     Welcome back, Admin! 👋
                                 </h1>
                                 <p className="text-sm text-(--text-primary)">
