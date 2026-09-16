@@ -6,8 +6,8 @@ import RevenueOverviewChart from '../components/dashboard/RevenueOverviewChart';
 
 function Dashboard (){
 
-    const day = new Date().toLocaleDateString('en-GB', { weekday: 'long', month: 'short', day: '2-digit', year: 'numeric' });
-    console.log(day);
+    const day = new Date().toLocaleDateString('en-GB', { weekday: 'short', month: 'short', day: '2-digit', year: 'numeric' });
+    // console.log(day);
 
     // const totalStudents = students.length;
     // const totalCourses = courses.length;
@@ -20,7 +20,7 @@ function Dashboard (){
 
 {/*****************************************************header**********************************************/}
 
-                        <header className ="flex flex-wrap xl:flex-nowrap gap-5 items-center ">
+                        <header className ="flex flex-wrap xl:flex-nowrap gap-5 justify-between items-center ">
                             <span className="flex flex-col gap-2">
                                 <h1 className=" font-bold text-xl sm:text-2xl lg:text-4xl text-[#21295e]">
                                     Welcome back, Admin! 👋

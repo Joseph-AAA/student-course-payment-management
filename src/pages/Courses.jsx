@@ -131,7 +131,7 @@ export default function Courses() {
   };
 
   return (
-    <div className="container flex gap-6 ">
+    <div className="page-container pt-5  flex gap-6 ">
       {/* Main Content */}
       <div className="flex-1 min-w-0">
         {/* Header */}

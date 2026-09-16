@@ -8,7 +8,7 @@ export function PaymentProvider ({children}){
       return  payments.reduce((total,current)=>{
         return   (total+current.amountPaid)},0)
     },[]);
-    console.log(totalRevenue);
+    // console.log(totalRevenue);
 
      const chartData = useMemo(() => {
     const monthlyRevenue = {};

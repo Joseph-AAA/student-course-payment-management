@@ -4,7 +4,7 @@ import { Activity , ArrowRight} from "lucide-react";
 function ActivityCard(){
     const [activities, setActivities] = useState(activity);
     
-    console.log(activities)
+    // console.log(activities)
 
     return(
         <div className="w-full flex flex-col items-center  rounded-xl mt-5 mb-5 bg-white shadow-sm">

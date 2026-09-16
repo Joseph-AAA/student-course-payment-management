@@ -141,7 +141,7 @@ function Students() {
     );
   }).length;
   return (
-    <div className="container mt-5 bg-slate-50 mb-5">
+    <div className="page-container pt-5 bg-slate-50 mb-5">
 
       <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
