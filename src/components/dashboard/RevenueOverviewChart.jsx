@@ -13,7 +13,7 @@ function RevenueOverviewChart(){
      const {chartData,payments,totalRevenue} = usePayment();
 
     
-   console.log(payments);
+//    console.log(payments);
 
    
 
@@ -26,7 +26,7 @@ function RevenueOverviewChart(){
                         </div>
 
                         <div className="relative w-32 h-12 flex">
-                            <select className="appearance-none border border-gray-300 px-2  w-full rounded-md">
+                            <select className="appearance-none cursor-pointer border border-gray-300 px-2  w-full rounded-md">
                                 <option value="this-month">
                                     This month
                                 </option>

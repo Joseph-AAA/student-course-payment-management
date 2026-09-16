@@ -9,41 +9,70 @@ import Payments from "./pages/Payments";
 import Setting from "./pages/Setting";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import { useState } from "react";
 
 import { Route, Routes } from "react-router-dom";
 
 function App() {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+
+  
+
   return (
     <div className=" grid min-h-screen grid-cols-1 lg:grid-cols-[240px_1fr]">
+        <div className="w-full lg:block">
+              <aside
+                    className={`
+                      fixed inset-y-0 left-0 z-60
+                      flex h-screen w-full flex-col items-center
+                      bg-(--sidebar) text-white
 
-      <aside className="sticky top-0 hidden h-screen w-full flex-col items-center 
-      bg-(--sidebar) text-white lg:flex">
-        <Sidebar />
-      </aside>
+                      md:w-1/2
+                      lg:w-60
 
-      <div className="grid grid-rows-[76px_1fr_56px] gap-0 bg-(--background) h-full w-full">
+                      transition-transform duration-300 ease-in-out
+                      ${sidebarOpen ? "translate-x-0" : "-translate-x-full"}
 
-        <nav className="sticky top-0 z-50 w-full bg-(--navbar) shadow-md">
-          <Navbar />
-        </nav>
-
-        <main className="w-full">
-          <Routes>
-            <Route path="/" element={<MainDashboard />} />
-            <Route path="/students" element={<Students />} />
-            <Route path="/courses" element={<Courses />} />
-            <Route path="/payments" element={<Payments />} />
-            <Route path="/setting" element={<Setting />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
-        </main>
-
-        <div className="bg-(--footer) w-full">
-          <Footer />
+                      lg:translate-x-0
+                    `}
+                  >
+                <Sidebar
+                  sidebarOpen={sidebarOpen}
+                  setSidebarOpen={setSidebarOpen}
+                />
+                
+              </aside>
+              {sidebarOpen && (
+                  <div
+                    className="fixed inset-0 z-40 bg-black/30"
+                    onClick={() => setSidebarOpen(false)}
+                  />
+                )}
         </div>
+        <div className="grid grid-rows-[76px_1fr_56px] gap-0 bg-(--background) h-full w-full">
 
-      </div>
+            <nav className="sticky top-0 z-50 w-full bg-(--navbar) shadow-md">
+              <Navbar sidebarOpen={sidebarOpen}
+                      setSidebarOpen={setSidebarOpen}/>
+            </nav>
+
+            <main className="w-full">
+              <Routes>
+                <Route path="/" element={<MainDashboard />} />
+                <Route path="/students" element={<Students />} />
+                <Route path="/courses" element={<Courses />} />
+                <Route path="/payments" element={<Payments />} />
+                <Route path="/setting" element={<Setting />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/contact" element={<Contact />} />
+              </Routes>
+            </main>
+
+            <div className="bg-(--footer) w-full">
+              <Footer />
+            </div>
+
+        </div>
     </div>
   );
 }
