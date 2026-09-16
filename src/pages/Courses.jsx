@@ -131,9 +131,9 @@ export default function Courses() {
   };
 
   return (
-    <div className="page-container pt-5  flex gap-6 ">
+    <div className="page-container pt-5  flex flex-col md:flex-row gap-6 ">
       {/* Main Content */}
-      <div className="flex-1 min-w-0">
+      <div className="md:flex-1 min-w-0">
         {/* Header */}
         <div className="flex justify-between items-center pt-5  mb-6">
           <div>
@@ -278,7 +278,7 @@ export default function Courses() {
       </div>
 
       {/* Right Sidebar - exactly like screenshot */}
-      <div className="w-72 shrink-0 pt-5 pb-5">
+      <div className="md:w-72 shrink-0 pt-5 pb-5">
         <div className="bg-white border border-(--border) rounded-xl p-4">
           <div className="flex justify-between items-center mb-4">
             <h3 className="font-semibold text-gray-800">Filters</h3>
