@@ -22,9 +22,9 @@ function TopCourses(){
                             return(
                                 <div className="w-full flex h-15  mb-3 gap-3
                                         items-center " key={courses.id}>
-                                    <span className="h-full w-15 rounded-md flex justify-center
-                                                  items-center bg-amber-300 shrink-0">
-                                        {courses.icon}
+                                    <span className={`h-full w-15 rounded-md flex justify-center
+                                                  items-center border border-gray-200 shadow-md ${courses.color} shrink-0`}>
+                                        <img src={courses.icon} alt={courses.title} />
                                     </span>
                                     <div className="w-full flex justify-between">
                                         <span className="text-sm flex flex-col">

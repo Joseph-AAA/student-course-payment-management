@@ -71,7 +71,9 @@ export default function CourseDetails({ course, onBack }) {
         <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
           <div className="flex items-center gap-4">
             <div className="bg-white/20 rounded-lg p-4">
-              <span className="text-5xl font-bold text-white">{icon}</span>
+              <span className="text-5xl font-bold text-white">
+                  <img className="w-23" src={course.icon} alt={course.title}/> 
+              </span>
             </div>
             <div>
               <span className="inline-block bg-white/20 text-white text-xs font-medium px-2 py-1 rounded-full mb-2">
