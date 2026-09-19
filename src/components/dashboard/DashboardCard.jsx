@@ -6,7 +6,8 @@ function DashboardCard({ label, value, icon, Icon, change,bgColor,text}) {
               <Icon className="size-7 text-white" />
             </div>
 
-            <div className="flex items-center gap-5 md:items-start md:gap-0 md:flex-col justify-center px-4">
+            <div className="flex items-center gap-5 md:items-start md:gap-0 md:flex-col 
+                            justify-center px-4">
                 <h2 className="text-md md:text-xl font-bold">{value}</h2>
                 <p className="text-sm text-gray-500">{label}</p>
 

@@ -4,7 +4,7 @@ import DashboardCard from '../dashboard/DashboardCard';
 
 function DashboardComponent() {
     return(  
-              <div className='grid lg:grid-cols-2 xl:grid-cols-3  2xl:grid-cols-4 gap-3 flex-wrap mt-6'>
+              <div className='grid lg:grid-cols-2 xl:grid-cols-2  2xl:grid-cols-4 gap-3 flex-wrap mt-6'>
                  {
                         dashboardCards.map((card) => {
                             return  (<DashboardCard

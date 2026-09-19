@@ -7,15 +7,15 @@ function ActivityCard(){
     // console.log(activities)
 
     return(
-        <div className="w-full flex flex-col items-center  rounded-xl mt-5 mb-5 bg-white shadow-sm">
+        <div className="w-full flex flex-col items-center h-96 rounded-xl bg-white shadow-sm">
             <div className="w-[95%] h-16  flex items-center justify-between">
                 <h3 className="text-xs md:text-md font-bold flex flex-col sm:flex-row gap-3 text-blue-600">
                     <Activity />
                      Recent Activites
                 </h3>
-                <p href="#" className="flex text-sm md:text-md gap-3  text-blue-600">
+                <a href="#" className="flex text-sm md:text-md gap-3  text-blue-600">
                     View All Activites <ArrowRight />
-                </p>
+                </a>
             </div>
             {activities.map((activity)=>{
                     const config = activityConfig[activity.type];
