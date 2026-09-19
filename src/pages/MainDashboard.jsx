@@ -4,6 +4,7 @@ import DashboardComponent from '../components/dashboard/DashboardComponent';
 import ActivityCard from '../components/dashboard/ActivityCard';
 import RevenueOverviewChart from '../components/dashboard/RevenueOverviewChart';
 import TopCourses from '../components/dashboard/TopCourses';
+import UpcomingCourses from '../components/dashboard/UpcomingCourses';
 
 function Dashboard (){
 
@@ -20,7 +21,7 @@ function Dashboard (){
                              2xl:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]
                              gap-3 border-(--border) rounded-xl ">
 
-                    <section className='min-w-0'>
+                    <section className='min-w-0 grid gap-3'>
 {/*****************************************************header**********************************************/}
                         <header className ="flex flex-wrap gap-5 justify-between items-center ">
                             <span className="min-w-0 flex flex-col gap-2">
@@ -40,7 +41,7 @@ function Dashboard (){
 {/****************************************************Total View Card***********************************************/}
                         <DashboardComponent />
                         
-                      <div className="grid min-w-0 grid-cols-1 2xl:grid-cols-2 gap-3 mt-5">
+                      <div className="grid min-w-0 grid-cols-1 2xl:grid-cols-2 gap-3 ">
                             <div className="min-w-0">
                                 <ActivityCard />
                             </div>
@@ -48,12 +49,16 @@ function Dashboard (){
                             <div className="min-w-0">
                                 <RevenueOverviewChart />
                             </div>
-                        </div>                  
+                        </div>  
+                        <div className='min-w-0'>
+                            <UpcomingCourses />    
+                        </div>                
                     </section>
 {/******************************************************Top Courses***********************************************/}
                     <section className='min-w-0'>
                         <TopCourses />
                     </section>
+
             </div>
 }
 export default Dashboard;

@@ -201,7 +201,9 @@ export default function Courses() {
               <div key={course.id} onClick={() => openCourseModal(course)} className="bg-white border border-(--border) rounded-xl overflow-hidden hover:shadow-lg transition-all cursor-pointer relative">
                 {/* Colored Header */}
                 <div className={`${course.color} h-24 flex items-center justify-center`}>
-                  <span className="text-4xl font-bold text-white">{course.icon}</span>
+                  <span className="font-bold w-full text-white flex justify-center">
+                      <img className="w-23" src={course.icon} alt={course.title}/> 
+                  </span>
                 </div>
                 <div className="absolute top-2 right-2">
                   <button onClick={(e) => { e.stopPropagation(); setOpenMenuId(openMenuId === course.id ? null : course.id); }} className="text-white/70 hover:text-white">
@@ -399,7 +401,10 @@ export default function Courses() {
             <div className="p-6">
               <div className="flex justify-between items-start mb-4">
                 <div className="flex items-center gap-3">
-                  <div className={`${modalCourse.color} p-3 rounded-lg`}><span className="text-2xl font-bold text-white">{modalCourse.icon}</span></div>
+                  <div className={`${modalCourse.color} p-3 rounded-lg`}>
+                    <span className="text-2xl font-bold text-white">
+                      <img src={modalCourse.icon} className="w-23" alt={modalCourse.title} />
+                    </span></div>
                   <div>
                     <h3 className="text-2xl font-bold text-gray-800">{modalCourse.title}</h3>
                     <p className="text-sm text-gray-500">{modalCourse.category} • {modalCourse.level}</p>
