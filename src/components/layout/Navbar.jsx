@@ -19,7 +19,7 @@ function Navbar({sidebarOpen, setSidebarOpen}) {
                           
                          <Menu />
                     </button>   
-                    <div className="w-50  flex items-center gap-4 h-full">
+                    <div className="w-auto flex items-center gap-4 h-full">
                         <Bell className="size-5 text-gray-500 cursor-pointer" />
                         <div className="flex h-full items-center justify-end">
                                 <div className="flex items-center gap-3 cursor-pointer">

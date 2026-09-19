@@ -30,7 +30,7 @@ function StudentDetails({
     setActiveTab(tab);
   };
   return (
-    <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
+    <div className="overflow-hidden  rounded-xl border border-slate-200 bg-white shadow-sm">
       <div className="relative border-b border-slate-100 p-5">
         <button
           onClick={onClose}

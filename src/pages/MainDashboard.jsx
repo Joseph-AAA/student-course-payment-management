@@ -3,6 +3,7 @@ import DashboardComponent from '../components/dashboard/DashboardComponent';
 // import ActivityComponent from '../components/dashboard/ActivityComponent';
 import ActivityCard from '../components/dashboard/ActivityCard';
 import RevenueOverviewChart from '../components/dashboard/RevenueOverviewChart';
+import TopCourses from '../components/dashboard/TopCourses';
 
 function Dashboard (){
 
@@ -15,13 +16,14 @@ function Dashboard (){
     // const pendingPayments = payments.reduce((total, payment) => total + payment.balance, 0);
 
     
-    return  <div className="page-container pt-5 grid grid-cols-1  md:grid-cols-[1fr_1fr] lg:grid-cols-[2fr_1fr]  border-(--border) rounded-xl ">
-                    <section>
+    return  <div className=" grid w-full min-w-0 grid-cols-1 xl:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]
+                             2xl:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]
+                             gap-3 border-(--border) rounded-xl ">
 
+                    <section className='min-w-0'>
 {/*****************************************************header**********************************************/}
-
-                        <header className ="flex flex-wrap xl:flex-nowrap gap-5 justify-between items-center ">
-                            <span className="flex flex-col gap-2">
+                        <header className ="flex flex-wrap gap-5 justify-between items-center ">
+                            <span className="min-w-0 flex flex-col gap-2">
                                 <h1 className=" font-bold text-xl sm:text-2xl lg:text-4xl text-[#21295e]">
                                     Welcome back, Admin! 👋
                                 </h1>
@@ -29,7 +31,7 @@ function Dashboard (){
                                     Here's what's happening with MyCodeAcademy today.
                                 </p>
                             </span>
-                            <span className="border-2 border-(--border) rounded-xl p-5 h-4 flex items-center gap-2 text-(--text-primary) text-sm">
+                            <span className="shrink-0 border-2 border-(--border) rounded-xl p-5 h-4 flex items-center gap-2 text-(--text-primary) text-sm">
                                 <CalendarDays/>
                                 {day}
                             </span>
@@ -38,14 +40,19 @@ function Dashboard (){
 {/****************************************************Total View Card***********************************************/}
                         <DashboardComponent />
                         
-                       <div className="grid grid-cols-1 xl:grid-cols-2 gap-3">
-                            <ActivityCard />
-                            <RevenueOverviewChart />
-                      </div>
-                        
-                    </section>
-                    <section>
+                      <div className="grid min-w-0 grid-cols-1 2xl:grid-cols-2 gap-3 mt-5">
+                            <div className="min-w-0">
+                                <ActivityCard />
+                            </div>
 
+                            <div className="min-w-0">
+                                <RevenueOverviewChart />
+                            </div>
+                        </div>                  
+                    </section>
+{/******************************************************Top Courses***********************************************/}
+                    <section className='min-w-0'>
+                        <TopCourses />
                     </section>
             </div>
 }

@@ -4,18 +4,9 @@ import {
   Plus, ChevronDown, LayoutGrid, List, X, Star, Users, 
   MoreVertical, Trash2, Pencil, CalendarDays
 } from "lucide-react";
-
+import {initialCourses} from "../data/data";
 // Exact data from the screenshot
-const initialCourses = [
-  { id: 1, title: "JavaScript Fundamentals", category: "Web Development", level: "Beginner", duration: "8 weeks", price: "RM 899", students: 110, icon: "JS", color: "bg-yellow-400", textColor: "text-yellow-600", status: "Published", description: "Master JavaScript from the ground up. This course covers variables, functions, arrays, objects, and DOM manipulation.", rating: 4.8, totalLessons: 48, instructor: { name: "John Doe", title: "Senior Developer" } },
-  { id: 2, title: "React.js Bootcamp", category: "Web Development", level: "Intermediate", duration: "10 weeks", price: "RM 899", students: 85, icon: "⚛️", color: "bg-blue-400", textColor: "text-blue-600", status: "Published", description: "Learn React from scratch and build real-world applications with modern tools and best practices.", rating: 4.9, totalLessons: 62, instructor: { name: "Jane Smith", title: "Frontend Architect" } },
-  { id: 3, title: "Node.js Complete Guide", category: "Backend Development", level: "Intermediate", duration: "9 weeks", price: "RM 899", students: 63, icon: "node", color: "bg-green-400", textColor: "text-green-600", status: "Published", description: "Learn Node.js from scratch and build powerful backend applications with Express and MongoDB.", rating: 4.7, totalLessons: 55, instructor: { name: "Mike Johnson", title: "Backend Engineer" } },
-  { id: 4, title: "TypeScript Essentials", category: "Web Development", level: "Beginner", duration: "8 weeks", price: "RM 499", students: 45, icon: "TS", color: "bg-blue-500", textColor: "text-blue-600", status: "Published", description: "Master TypeScript for safer, more maintainable JavaScript applications with static typing.", rating: 4.6, totalLessons: 40, instructor: { name: "Sarah Wilson", title: "Fullstack Developer" } },
-  { id: 5, title: "HTML5 Fundamentals", category: "Web Development", level: "Beginner", duration: "8 weeks", price: "RM 899", students: 110, icon: "HTML5", color: "bg-orange-500", textColor: "text-orange-600", status: "In Progress", description: "Build semantic, accessible web pages with HTML5 and modern web standards.", rating: 4.5, totalLessons: 35, instructor: { name: "David Lee", title: "Web Developer" } },
-  { id: 6, title: "CSS3 Mastery", category: "Web Development", level: "Beginner", duration: "8 weeks", price: "RM 899", students: 110, icon: "CSS3", color: "bg-pink-500", textColor: "text-pink-600", status: "In Progress", description: "Take your CSS skills to the next level with Flexbox, Grid, animations, and responsive design.", rating: 4.8, totalLessons: 45, instructor: { name: "Emily Chen", title: "UI Designer" } },
-  { id: 7, title: "Python for Beginners", category: "Backend Development", level: "Beginner", duration: "8 weeks", price: "RM 899", students: 98, icon: "PY", color: "bg-yellow-600", textColor: "text-yellow-700", status: "Draft", description: "Start your Python journey with practical examples and projects that build real skills.", rating: 4.7, totalLessons: 50, instructor: { name: "Alex Brown", title: "Data Scientist" } },
-  { id: 8, title: "UI/UX Design Principles", category: "UI/UX Design", level: "Intermediate", duration: "6 weeks", price: "RM 699", students: 56, icon: "🎨", color: "bg-purple-400", textColor: "text-purple-600", status: "Draft", description: "Learn the fundamentals of user-centered design, wireframing, prototyping, and usability testing.", rating: 4.9, totalLessons: 42, instructor: { name: "Lisa Anderson", title: "UX Designer" } },
-];
+
 
 export default function Courses() {
   const [courses, setCourses] = useState(initialCourses);
@@ -131,11 +122,11 @@ export default function Courses() {
   };
 
   return (
-    <div className="page-container pt-5  flex flex-col md:flex-row gap-6 ">
+    <div className="w-full flex flex-col md:flex-row gap-6 ">
       {/* Main Content */}
       <div className="md:flex-1 min-w-0">
         {/* Header */}
-        <div className="flex justify-between items-center pt-5  mb-6">
+        <div className="flex justify-between items-center  mb-6">
           <div>
             <h2 className="text-2xl font-bold text-gray-800">Courses</h2>
             <p className="text-sm text-gray-500 mt-1">Manage and organize all courses</p>
@@ -278,7 +269,7 @@ export default function Courses() {
       </div>
 
       {/* Right Sidebar - exactly like screenshot */}
-      <div className="md:w-72 shrink-0 pt-5 pb-5">
+      <div className="md:w-72 shrink-0 pb-5">
         <div className="bg-white border border-(--border) rounded-xl p-4">
           <div className="flex justify-between items-center mb-4">
             <h3 className="font-semibold text-gray-800">Filters</h3>

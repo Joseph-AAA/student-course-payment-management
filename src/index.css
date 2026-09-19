@@ -131,10 +131,15 @@ body {
 .page-container {
   width: 95%;
   margin-inline: auto;
-  height: 95%;
-  min-height: 100%;
-  /* padding-inline: 1rem; */
-  /* border: #020617 1px solid; */
+}
+
+.main-container {
+  width: 95%;
+  height: 100%;
+  margin-inline: auto;  /*center for horizontal*/
+  /* margin-top: 10px; */
+  padding-top: 25px;
+  padding-bottom: 25px;
 }
 
 /* ================================
@@ -142,7 +147,7 @@ body {
 ================================ */
 
 a {
-  color: inherit;
+  /* color: inherit; */
   text-decoration: none;
 }
 
