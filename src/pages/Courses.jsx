@@ -4,12 +4,12 @@ import {
   Plus, ChevronDown, LayoutGrid, List, X, Star, Users, 
   MoreVertical, Trash2, Pencil, CalendarDays
 } from "lucide-react";
-import {initialCourses} from "../data/data";
+import {coursesData} from "../data/data";
 // Exact data from the screenshot
 
 
 export default function Courses() {
-  const [courses, setCourses] = useState(initialCourses);
+  const [courses, setCourses] = useState(coursesData);
   const [searchQuery, setSearchQuery] = useState("");
   const [viewMode, setViewMode] = useState("grid");
   const [showAddCourse, setShowAddCourse] = useState(false);
@@ -412,7 +412,7 @@ export default function Courses() {
                 </div>
                 <button onClick={() => setShowCourseModal(false)} className="text-gray-400 hover:text-gray-600"><X size={24} /></button>
               </div>
-              <div className="grid grid-cols-2 gap-4 mb-4">
+              <div className="grid grid-cols-2 gap-4 mb-4"> 
                 <div className="flex items-center gap-2"><Clock size={18} className="text-blue-500" /><span className="text-sm text-gray-600">Duration: {modalCourse.duration}</span></div>
                 <div className="flex items-center gap-2"><Users size={18} className="text-purple-500" /><span className="text-sm text-gray-600">Students: {modalCourse.students}</span></div>
                 <div className="flex items-center gap-2"><Star size={18} className="text-yellow-500" /><span className="text-sm text-gray-600">Rating: {modalCourse.rating}</span></div>
