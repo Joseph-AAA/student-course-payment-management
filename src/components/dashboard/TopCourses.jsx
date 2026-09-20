@@ -1,8 +1,8 @@
-import { initialCourses } from "../../data/data";
+import { coursesData } from "../../data/data";
 import { ArrowRight} from "lucide-react";
 function TopCourses(){
 
-    const topCourses = initialCourses.sort((a,b)=> b.students - a.students).slice(0,5);
+    const topCourses = coursesData.sort((a,b)=> b.students - a.students).slice(0,5);
 
     console.log(topCourses);
 
