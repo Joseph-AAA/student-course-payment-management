@@ -439,6 +439,8 @@ export const coursesData = [
     instructor: {
       name: "John Doe",
       title: "Senior Full-Stack Developer",
+      image: "https://www.loremfaces.net/96/id/1.jpg",
+
     },
   },
 
@@ -463,6 +465,7 @@ export const coursesData = [
     instructor: {
       name: "Jane Smith",
       title: "Frontend Developer",
+      image: "https://www.loremfaces.net/96/id/2.jpg",
     },
   },
 
@@ -487,6 +490,7 @@ export const coursesData = [
     instructor: {
       name: "Michael Tan",
       title: "Backend Engineer",
+      image: "https://www.loremfaces.net/96/id/3.jpg",
     },
   },
 
@@ -511,6 +515,7 @@ export const coursesData = [
     instructor: {
       name: "David Lee",
       title: "Backend Developer",
+      image: "https://www.loremfaces.net/96/id/5.jpg",
     },
   },
 ];
