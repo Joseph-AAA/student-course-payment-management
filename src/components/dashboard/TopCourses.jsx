@@ -4,7 +4,7 @@ function TopCourses(){
 
     const topCourses = coursesData.sort((a,b)=> b.students - a.students).slice(0,5);
 
-    console.log(topCourses);
+    // console.log(topCourses);
 
     return(
         <div className="w-full bg-white min-h-92 rounded-xl flex justify-center items-center">

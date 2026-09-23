@@ -20,9 +20,9 @@ function UpcomingCourses (){
                                   <div className="relative rounded-xl min-h-56 bg-gray-100 shadow-sm">
                                     <div key={courses.title} className="flex p-3">
                                         <span className="shrink-0 pr-3">
-                                            <img src={courses.icon} className="w-23" alt="img"/>
+                                            <img src={courses.icon} className="w-18" alt="img"/>
                                         </span>
-                                        <div className="pt-3">
+                                        <div className="pt-2">
                                             <span className={`${courses.bgcolor} inline-block px-2 py-1 mb-1 rounded-md`} >
                                                 <p>{courses.category}</p>
                                             </span>

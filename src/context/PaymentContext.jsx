@@ -1,7 +1,8 @@
 import { createContext, useContext, useMemo } from "react";
 import { payments } from "../data/data";
-const PaymentContext = createContext();
 
+
+const PaymentContext = createContext();
 export function PaymentProvider ({children}){
 
     const totalRevenue = useMemo(()=>{
@@ -10,29 +11,36 @@ export function PaymentProvider ({children}){
     },[]);
     // console.log(totalRevenue);
 
-     const chartData = useMemo(() => {
-    const monthlyRevenue = {};
 
-    payments.forEach((payment) => {
-      if (!payment.paymentDate) return;
 
-      const month = new Date(payment.paymentDate).toLocaleDateString(
-        "en-US",
-        { month: "short" }
-      );
+      const chartData = useMemo(()=>{
+           const monthlyRevenue = {};
+            payments.forEach((payment)=>{
+                if(!payment.paymentDate){   //checking any payment date exist or not
+                  return;                   //if no, will skip
+                }
+                 //if exist, will assign as month short form. eg :"2026-04-03" → month = "Apr"
+                 const month = new Date(payment.paymentDate).toLocaleDateString(
+                    "en-US",
+                    { month: "short" }
+                  );
+               
+                //after that, checking this month ald exists in monthlyRevenue obj
+                //if not yet, will create property and value of 0 and 
+                //if ald existed, will add payment amount to existing total of that month 
+                if(!monthlyRevenue[month]){
+                    monthlyRevenue[month] = 0;
+                }
+                //for monthlyRevenue is declared as obj, 
+               
+                monthlyRevenue[month] += payment.amountPaid;  //this will create as obj eg.{ Apr : 500 }
+                
 
-      if (!monthlyRevenue[month]) {
-        monthlyRevenue[month] = 0;
-      }
 
-      monthlyRevenue[month] += payment.amountPaid;
-    });
-
-    return Object.entries(monthlyRevenue).map(([month, revenue]) => ({
-      month,
-      revenue,
-    }));
-  }, []);
+                }
+              )
+              return Object.entries(monthlyRevenue).map(([month, revenue])=>({month, revenue}))
+      },[])
 
     return (
         <PaymentContext.Provider value={{payments,totalRevenue,chartData}}>
