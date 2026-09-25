@@ -5,7 +5,7 @@ function UpcomingCourses (){
 
     const upcomingCourses = coursesData.filter((data)=> data.status=="Upcoming")
     return(
-        <div className="w-full min-h-96 bg-white shadow-md rounded-2xl flex flex-col mt-6 items-center justify-center">
+        <div className="w-full min-h-96 bg-white shadow-md rounded-2xl flex flex-col items-center justify-center">
              <div className="w-[95%]  h-16 flex items-center justify-between">
                     <span className="text-lg font-medium text-blue-600">Upcoming Courses</span>
                     <a className="flex text-lg font-medium text-blue-600" href="#">View Schedule  <ArrowRight  /></a>
