@@ -11,6 +11,12 @@ export function PaymentProvider ({children}){
     },[]);
     // console.log(totalRevenue);
 
+    const totalFee = useMemo(()=>{
+      return payments.reduce((total, currentFee)=>{
+          return (total + currentFee.totalFee);
+      })
+    },[])
+
 
 
       const chartData = useMemo(()=>{
@@ -35,10 +41,10 @@ export function PaymentProvider ({children}){
                
                 monthlyRevenue[month] += payment.amountPaid;  //this will create as obj eg.{ Apr : 500 }
                 
-
-
                 }
               )
+              //Object.entries() converts the object into an array of [key, value] pairs
+              //map convert that array as obj array
               return Object.entries(monthlyRevenue).map(([month, revenue])=>({month, revenue}))
       },[])
 

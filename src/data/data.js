@@ -607,9 +607,9 @@ export const payments = [
     courseId: 1,
     totalFee: 1500,
     amountPaid: 1500,
-    balance: 0,
-    status: "Paid",
-    paymentDate: "2026-04-15",
+    balance: 1500,
+    status: "Pending",
+    paymentDate: "",
   },
   {
     id: "PAY-002",
