@@ -9,7 +9,7 @@ const data = [
 export default function PaymentStatusPieChart() {
   return (
     <div className="w-full h-full rounded-xl  ">
-      <div className="h-16 w-full flex items-center ">
+      <div className="h-10 w-full flex ">
         <h2 className=" text-lg font-semibold">Payment Status</h2>
       </div>
       
@@ -35,7 +35,7 @@ export default function PaymentStatusPieChart() {
                   </PieChart>
                   
                   <div className="absolute  flex flex-col items-center justify-center">
-                      <span className="text-lg font-bold">RM 12,450</span>
+                      <span className="text-md font-bold">RM 12,450</span>
                       <span className="text-md font-medium text-black">Total</span>
                   </div>
                 
