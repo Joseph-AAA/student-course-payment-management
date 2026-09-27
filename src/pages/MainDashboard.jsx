@@ -6,6 +6,7 @@ import RevenueOverviewChart from '../components/dashboard/RevenueOverviewChart';
 import TopCourses from '../components/dashboard/TopCourses';
 import UpcomingCourses from '../components/dashboard/UpcomingCourses';
 import PaymentStatus from '../components/dashboard/PaymentStatus';
+import ShowHighlights from '../components/dashboard/ShowHighlights';
 function Dashboard (){
 
     const day = new Date().toLocaleDateString('en-GB', { weekday: 'short', month: 'short', day: '2-digit', year: 'numeric' });
@@ -55,13 +56,16 @@ function Dashboard (){
                         </div>                
                     </section>
 {/******************************************************Top Courses***********************************************/}
-                    <section className='min-w-0 flex flex-col gap-3'>
+                    <section className='min-w-0  flex flex-col gap-3'>
                         <div className=''>
                             <TopCourses />
                         </div>
                         
                         <div>
                             <PaymentStatus />
+                        </div>
+                         <div className='min-h-96 2xl:flex-1'>
+                            <ShowHighlights />
                         </div>
                     </section>
 
