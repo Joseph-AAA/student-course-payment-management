@@ -74,7 +74,7 @@ function ShowHighlights() {
             items-center justify-center
             rounded-full bg-white/90 p-2
             text-slate-700 shadow-md
-            transition
+            transition z-1
             hover:bg-white
           "
         >
