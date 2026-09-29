@@ -1,15 +1,152 @@
+import { useEffect, useState } from "react";
+import {
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
+
 import PaymentRemiderHighlight from "./highlights/PaymentRemiderHighlight";
 import UpcomingClassHighlight from "./highlights/UpcomingClassHighlight";
 import CourseUpdateHighlight from "./highlights/CourseUpdateHighlight";
 import StudentUpdateHighlight from "./highlights/StudentUpdateHighlight";
-function ShowHighlights (){
-        return (
-             <div className="w-full bg-white min-h-full shadow-sm rounded-xl flex justify-center p-2 items-center">
-                <div className="w-[90%] h-[90%]  rounded-2xl">
-                        <UpcomingClassHighlight />
-                </div>
+
+function ShowHighlights() {
+  const slides = [
+    {
+      id: "payment",
+      component: <PaymentRemiderHighlight />,
+    },
+    {
+      id: "class",
+      component: <UpcomingClassHighlight />,
+    },
+    {
+      id: "course",
+      component: <CourseUpdateHighlight />,
+    },
+    {
+      id: "student",
+      component: <StudentUpdateHighlight />,
+    },
+  ];
+
+  const [current, setCurrent] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
+  const totalSlides = slides.length;
+
+  // Next slide
+  const nextSlide = () => {
+    setCurrent((prev) => (prev + 1) % totalSlides);
+  };
+
+  // Previous slide
+  const previousSlide = () => {
+    setCurrent((prev) =>
+      prev === 0 ? totalSlides - 1 : prev - 1
+    );
+  };
+
+  // Auto play
+  useEffect(() => {
+    if (isPaused) return;
+
+    const timer = setInterval(() => {
+      nextSlide();
+    }, 5000);
+
+    return () => clearInterval(timer);
+  }, [isPaused]);
+
+  return (
+    <div
+      className="relative flex min-h-full w-full items-center justify-center rounded-xl bg-white p-2 shadow-sm"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+    >
+         {/* Previous button */}
+        <button
+          type="button"
+          onClick={previousSlide}
+          aria-label="Previous highlight"
+          className="hover:cursor-pointer
+            absolute left-3 top-1/2
+            flex -translate-y-1/2
+            items-center justify-center
+            rounded-full bg-white/90 p-2
+            text-slate-700 shadow-md
+            transition
+            hover:bg-white
+          "
+        >
+          <ChevronLeft size={18} />
+        </button>
+      <div className="relative h-[90%] w-[90%] overflow-hidden rounded-2xl">
+
+        {/* Slides */}
+        <div
+          className="flex h-full transition-transform duration-500 ease-in-out"
+          style={{
+            transform: `translateX(-${current * 100}%)`,
+          }}
+        >
+          {slides.map((slide) => (
+            <div
+              key={slide.id}
+              className="h-full min-w-full shrink-0"
+            >
+              {slide.component}
             </div>
-        )
+          ))}
+        </div>
+
+
+        {/* Dots */}
+        <div
+          className="
+            absolute bottom-3 left-1/2
+            flex -translate-x-1/2
+            items-center gap-2
+          "
+        >
+          {slides.map((slide, index) => (
+            <button
+              key={slide.id}
+              type="button"
+              onClick={() => setCurrent(index)}
+              aria-label={`Go to ${slide.id}`}
+              className={`
+                h-2 rounded-full
+                transition-all duration-300
+                ${
+                  current === index
+                    ? "w-6 bg-blue-600"
+                    : "w-2 bg-slate-300 hover:bg-slate-400"
+                }
+              `}
+            />
+          ))}
+        </div>
+
+      </div>
+       {/* Next button */}
+        <button
+          type="button"
+          onClick={nextSlide}
+          aria-label="Next highlight"
+          className="hover:cursor-pointer
+            absolute right-3 top-1/2
+            flex -translate-y-1/2
+            items-center justify-center
+            rounded-full bg-white/90 p-2
+            text-slate-700 shadow-md
+            transition
+            hover:bg-white
+          "
+        >
+          <ChevronRight size={18} />
+        </button>
+    </div>
+  );
 }
 
 export default ShowHighlights;

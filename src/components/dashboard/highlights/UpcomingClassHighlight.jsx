@@ -7,7 +7,7 @@ function UpcomingClassHighlight(){
     return(
           <div className="h-full">
           <div className="h-full gap-4 flex flex-col relative">
-             <div className="flex items-center justify-between">
+             {/* <div className="flex items-center justify-between">
                  <h3 className="text-2xl font-bold"> Highlights</h3>
                  <div className="flex gap-3">
                     <span className="w-5 h-5 bg-gray-400 rounded-full"></span>
@@ -15,7 +15,7 @@ function UpcomingClassHighlight(){
                     <span className="w-5 h-5 bg-gray-400 rounded-full"></span>
                     <span className="w-5 h-5 bg-gray-400 rounded-full"></span>
                  </div>
-             </div>
+             </div> */}
               <div className="flex gap-3">
                   <div className="flex h-20 w-20 shrink-0 
                         items-center justify-center rounded-xl bg-purple-100  text-purple-600">
@@ -42,8 +42,16 @@ function UpcomingClassHighlight(){
                 <div className="h-[90%] ">
                    <h1 className="font-bold mb-1">React.js Bootcamp</h1>
                    <div>
-                      <CalendarDays className="w-5" />
-                      <Clock className="w-5" />
+                      
+                      <span className="flex gap-2">
+                         <CalendarDays className="w-5" />
+                          <p>31.10.2026</p>
+                      </span>
+                      <span className="flex gap-2">
+                          <Clock className="w-5" />
+                          <p>12.00 PM</p>
+                      </span>
+                      
                       <span className="flex gap-2">
                          <User className="w-5 shrink-0" /> Instructor : John Doe
                       </span>
