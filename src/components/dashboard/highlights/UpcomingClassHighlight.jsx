@@ -67,7 +67,7 @@ function UpcomingClassHighlight(){
 
               <div className="absolute right-0 top-1/2 -translate-y-1/3">
                 <img src={upcomingClass}
-                  className="max-w-47 z " />
+                  className="w-35 sm:max-w-47 z " />
               </div>
           </div>
     </div>
