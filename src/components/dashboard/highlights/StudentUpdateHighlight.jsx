@@ -6,7 +6,7 @@ function StudentUpdateHighlight() {
   return (
     <div className="h-full">
           <div className="h-full gap-4 flex flex-col relative">
-             <div className="flex items-center justify-between">
+             {/* <div className="flex items-center justify-between">
                  <h3 className="text-2xl font-bold"> Highlights</h3>
                  <div className="flex gap-3">
                     <span className="w-5 h-5 bg-gray-400 rounded-full"></span>
@@ -14,7 +14,7 @@ function StudentUpdateHighlight() {
                     <span className="w-5 h-5 bg-gray-400 rounded-full"></span>
                     <span className="w-5 h-5 bg-gray-400 rounded-full"></span>
                  </div>
-             </div>
+             </div> */}
               <div className="flex gap-3">
                   <div className="flex h-20 w-20 shrink-0 
                         items-center justify-center rounded-xl bg-green-100 text-green-600">
