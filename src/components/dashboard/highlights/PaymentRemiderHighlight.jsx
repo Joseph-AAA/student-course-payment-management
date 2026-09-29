@@ -5,7 +5,7 @@ import paymentReminder from "../../../assets/highlight-icons/paymentRemider.png"
 function PaymentRemiderHighlight() {
   return (
     <div className="h-full">
-          <div className="h-full gap-4 flex flex-col relative">
+          <div className="h-full gap-4 flex flex-col relative ">
              {/* <div className="flex items-center justify-between">
                  <h3 className="text-2xl font-bold"> Highlights</h3>
                  <div className="flex gap-3">
@@ -16,17 +16,17 @@ function PaymentRemiderHighlight() {
                  </div>
              </div> */}
               <div className="flex gap-3">
-                  <div className="flex h-20 w-20 shrink-0 
+                  <div className="flex h-15 w-15 sm:h-20 sm:w-20 shrink-0 
                         items-center justify-center rounded-xl bg-blue-100 text-blue-600">
-                    <CreditCard size={50} />
+                    <CreditCard className="w-[60%] h-[60%]" />
                   </div>
 
-                  <div className="">
+                  <div className="w-full">
                     <h3 className="font-medium text-2xl  text-slate-900">
                       Payment Reminder
                     </h3>
 
-                    <p className="text-sm text-slate-500 z-10">
+                    <p className="w-full flex text-sm text-slate-500 z-10 text-wrap">
                       12 students have outstanding payments
                     </p>
                   </div>
@@ -49,7 +49,7 @@ function PaymentRemiderHighlight() {
 
               <div className="absolute right-0 top-1/2 -translate-y-1/3">
                 <img src={paymentReminder}
-                  className="max-w-45 z " />
+                  className="w-35 sm:max-w-45 z " />
               </div>
           </div>
     </div>

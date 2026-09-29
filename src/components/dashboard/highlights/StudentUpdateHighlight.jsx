@@ -48,7 +48,7 @@ function StudentUpdateHighlight() {
               </button>
 
                 <img src={studentUpdate}
-                  className="max-w-50 absolute right-0 top-1/2 -translate-y-1/3 " />
+                  className="w-35 sm:max-w-50 absolute right-0 top-1/2 -translate-y-1/3 " />
        
           </div>
     </div>

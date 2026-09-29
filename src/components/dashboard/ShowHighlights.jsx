@@ -80,9 +80,9 @@ function ShowHighlights() {
         >
           <ChevronLeft size={18} />
         </button>
-      <div className="relative h-[90%] w-[90%] overflow-hidden rounded-2xl">
-
-        {/* Slides */}
+      <div className="relative h-[90%] w-[90%] min-w-0 overflow-hidden rounded-2xl">
+        
+                 {/* Slides */}
         <div
           className="flex h-full transition-transform duration-500 ease-in-out"
           style={{
@@ -92,7 +92,7 @@ function ShowHighlights() {
           {slides.map((slide) => (
             <div
               key={slide.id}
-              className="h-full min-w-full shrink-0"
+              className="h-full w-full min-w-0 shrink-0 basis-full"
             >
               {slide.component}
             </div>
@@ -126,8 +126,10 @@ function ShowHighlights() {
             />
           ))}
         </div>
+        </div>
+       
 
-      </div>
+      
        {/* Next button */}
         <button
           type="button"
