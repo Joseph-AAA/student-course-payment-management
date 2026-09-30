@@ -33,13 +33,13 @@ function UpcomingClassHighlight(){
                   </div>
               </div>
 
-              <div className="grid p-5 items-center gap-2 min-h-32 grid-cols-[1fr_2fr] w-[50%]
-               border-gray-200 border rounded-md bg-blue-50">
+              <div className="grid p-2 sm:p-5 items-center gap-2 min-h-32 grid-cols-[1fr_2fr] w-[50%]
+               border-gray-200  border rounded-md bg-blue-50">
                 
                 <div className="w-full h-[90%] grid justify-center">
                   <img src={reactLogo} className="w-15" alt="" />
                 </div>
-                <div className="h-[90%] ">
+                <div className="h-[90%] text-xs sm:text-lg">
                    <h1 className="font-bold mb-1">React.js Bootcamp</h1>
                    <div>
                       
@@ -60,14 +60,15 @@ function UpcomingClassHighlight(){
                 </div>
               </div>
 
-              <button className="bg-blue-300 hover:cursor-pointer rounded-2xl h-10 p-5 mt-auto  flex w-fit items-center gap-2 text-lg font-medium text-blue-600">
+              <button className="bg-blue-300 hover:cursor-pointer rounded-2xl 
+                      h-8 sm:h-13 p-5 mt-auto  flex w-fit items-center gap-2 text-lg font-medium text-blue-600">
                 View Schedule
                 <ArrowRight size={16} />
               </button>
 
               <div className="absolute right-0 top-1/2 -translate-y-1/3">
                 <img src={upcomingClass}
-                  className="w-35 sm:max-w-47 z " />
+                  className="w-25 sm:w-45 " />
               </div>
           </div>
     </div>

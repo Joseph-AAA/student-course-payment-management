@@ -42,13 +42,13 @@ function StudentUpdateHighlight() {
                 </p>
               </div>
 
-              <button className="bg-blue-300 hover:cursor-pointer rounded-2xl h-13 p-5 mt-auto  flex w-fit items-center gap-2 text-lg font-medium text-blue-600">
+              <button className="bg-blue-300 hover:cursor-pointer rounded-2xl h-8 sm:h-13 p-5 mt-auto  flex w-fit items-center gap-2 text-lg font-medium text-blue-600">
                 View Students
                 <ArrowRight size={16} />
               </button>
 
                 <img src={studentUpdate}
-                  className="w-35 sm:max-w-50 absolute right-0 top-1/2 -translate-y-1/3 " />
+                  className="w-25 sm:w-40 absolute right-0 top-1/2 -translate-y-1/3 " />
        
           </div>
     </div>
