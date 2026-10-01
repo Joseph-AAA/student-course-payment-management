@@ -139,7 +139,7 @@ export default function Courses() {
           </button>
         </div>
 
-        {/* Stats Cards - exactly like screenshot */}
+
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
           {stats.map((stat, idx) => {
             const Icon = stat.icon;
@@ -194,7 +194,6 @@ export default function Courses() {
           </div>
         </div>
 
-        {/* Course Grid - exactly like screenshot */}
         {viewMode === "grid" ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
             {filteredCourses.map((course) => (
@@ -270,7 +269,7 @@ export default function Courses() {
         )}
       </div>
 
-      {/* Right Sidebar - exactly like screenshot */}
+   
       <div className="md:w-72 shrink-0 pb-5">
         <div className="bg-white border border-(--border) rounded-xl p-4">
           <div className="flex justify-between items-center mb-4">
@@ -318,7 +317,7 @@ export default function Courses() {
           </div>
         </div>
 
-        {/* Course Preview - exactly like screenshot */}
+    
         <div className="bg-white border border-(--border) rounded-xl p-4 mt-4">
           <h3 className="font-semibold text-gray-800 mb-3">Course Preview</h3>
           <div className="bg-blue-50 rounded-lg p-3 mb-3">

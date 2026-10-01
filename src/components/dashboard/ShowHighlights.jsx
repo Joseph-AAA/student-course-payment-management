@@ -41,18 +41,18 @@ function ShowHighlights() {
 
   // Previous slide
   const previousSlide = () => {
-    setCurrent((prev) =>
-      prev === 0 ? totalSlides - 1 : prev - 1
-    );
+   setCurrent((prev)=>{
+       return prev === 0 ? totalSlides - 1 : prev - 1
+   })
   };
 
   // Auto play
   useEffect(() => {
     if (isPaused) return;
 
-    const timer = setInterval(() => {
-      nextSlide();
-    }, 5000);
+  const timer = setInterval(()=>{
+   return nextSlide()
+  },5000)
 
     return () => clearInterval(timer);
   }, [isPaused]);
@@ -78,54 +78,42 @@ function ShowHighlights() {
             hover:bg-white
           "
         >
-          <ChevronLeft size={18} />
+          <ChevronLeft size={18} className="" />
         </button>
       <div className="relative h-[90%] w-[90%] min-w-0 overflow-hidden rounded-2xl">
         
                  {/* Slides */}
-        <div
-          className="flex h-full transition-transform duration-500 ease-in-out"
-          style={{
-            transform: `translateX(-${current * 100}%)`,
-          }}
-        >
-          {slides.map((slide) => (
-            <div
-              key={slide.id}
-              className="h-full w-full min-w-0 shrink-0 basis-full"
-            >
-              {slide.component}
-            </div>
-          ))}
-        </div>
+          {/* <div
+            className="flex h-full transition-transform duration-500 ease-in-out"
+            style={{
+              transform: `translateX(-${current * 100}%)`,
+            }}
+          >
+            {slides.map((slide) => (
+              <div
+                key={slide.id}
+                className="h-full w-full min-w-0 shrink-0 basis-full"
+              >
+                {slide.component}
+              </div>
+            ))}
+          </div> */}
 
+         <div className="flex transition-transform duration-500 ease-in-out"
 
-        {/* Dots */}
-        <div
-          className="
-            absolute bottom-3 left-1/2
-            flex -translate-x-1/2
-            items-center gap-2
-          "
-        >
-          {slides.map((slide, index) => (
-            <button
-              key={slide.id}
-              type="button"
-              onClick={() => setCurrent(index)}
-              aria-label={`Go to ${slide.id}`}
-              className={`
-                h-2 rounded-full
-                transition-all duration-300
-                ${
-                  current === index
-                    ? "w-6 bg-blue-600"
-                    : "w-2 bg-slate-300 hover:bg-slate-400"
-                }
-              `}
-            />
-          ))}
-        </div>
+        
+            style={{
+              transform: `translateX(-${current * 100}%)`,
+            }}>
+            {slides.map((slide)=>{
+              return <div className = "h-full w-full min-w-0 shrink-0 basis-full">
+                        {slide.component}
+                   </div>
+          })}
+          </div>
+    
+
+              
         </div>
        
 
@@ -147,6 +135,34 @@ function ShowHighlights() {
         >
           <ChevronRight size={18} />
         </button>
+        
+        
+        {/* Dots */}
+        <div
+          className="
+            absolute bottom-5 left-1/2
+            flex -translate-x-1/2
+            items-center gap-2
+          "
+        >
+          {slides.map((slide, index) => (
+            <button
+              key={slide.id}
+              type="button"
+              onClick={() => setCurrent(index)}
+              aria-label={`Go to ${slide.id}`}
+              className={`hover:cursor-pointer
+                h-2 rounded-full
+                transition-all duration-300
+                ${
+                  current === index
+                    ? "w-6 bg-blue-600"
+                    : "w-2 bg-slate-300 hover:bg-slate-400"
+                }
+              `}
+            />
+          ))}
+        </div>
     </div>
   );
 }
